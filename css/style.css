@@ -1,0 +1,283 @@
+@charset 'utf-8';
+
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,a,img,small,sub,b,dl,dd,dt,ul,li,
+label,article,details,footer,header,menu,nav,input,textarea,select {
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.clear:after {
+    clear: both;
+    content: ' ';
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    width: 0;
+}
+
+li {
+    list-style: none;
+}
+
+html,body {
+    font-family: 'Arial';
+    font-size: 12px;
+    height: 100%;
+    width: 100%;
+    color: #333;
+    background: #fff;
+}
+
+/* ----------------------------------------------------------------------------------- */
+
+#urlbar {
+    background-color: #fff;
+    width: 90%;
+    height: 150px;
+    
+    text-align: center;
+    
+    position: absolute;
+    top: 48%; margin-top: -6.5%;
+    left: 50%; margin-left: -45%;
+}
+
+    #urlbar div.title {
+        font-family: Georgia, Times, 'Times new roman';
+        font-size: 3em;
+        margin: 0 0 10px 0;
+        color: #999;
+    }
+
+    #urlbar input[type='text'], #urlbar input[type='url'] {
+        border: 1px solid #c1c1c1;
+        border-radius: 2px;
+        
+        background-color: #fff;
+        color: #444;
+        
+        font-size: 14px;
+        font-family: Georgia, Times, 'Times new roman';
+        padding: 6px;
+        
+        margin: 0 2px 0 0;
+        
+        width: 70%; height: 18px;
+    }
+        #urlbar input[type='text']:focus, #urlbar input[type='url']:focus {
+            border-color: #4285f4;
+        }
+
+    #urlbar input[type='button'] {
+        border: 1px solid #d9d9d9;
+        border-radius: 2px;
+        
+        background-color: #f2f2f2;
+        color: #444;
+        
+        font-size: 12px;
+        font-family: Tahoma, Arial, Verdana;
+        font-weight: bold;
+        padding: 8px;
+        
+        margin: 0 0 0 2px;
+        
+        width: 120px;
+    }
+        #urlbar input[type='button']:hover {
+            border-color: #c6c6c6;
+            box-shadow: 0px 1px 0px 0px rgba(50, 50, 50, 0.2);
+        }
+
+#tasklist {
+    display: none;
+}
+        
+/* ----------------------------------------------------------------------------------- */
+
+#tasklist {
+    text-align: center;
+}
+    #tasklist .task {
+        text-align: center;
+    }
+        #tasklist .task table {
+            margin: 0 auto;
+            width: 80%; height: 55px;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+            #tasklist .task table tr td { 
+                /*border: 1px solid #123;*/
+                
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            #tasklist .task table .name {
+                width: 25%; max-width: 100px;
+                text-align: left;
+                font-size: 16px;
+                font-family: Georgia, Times, 'Times new roman';
+                overflow: hidden;
+            }
+                #tasklist .task table .name a {
+                    text-decoration: none;
+                    color: #333;
+                }
+                    #tasklist .task table .name a:hover {
+                        text-decoration: underline;
+                    }
+            #tasklist .task table .progress {
+                width: auto;
+            }
+            #tasklist .task table .actions {
+                width: 40px; min-width: 40px;
+            }
+                #tasklist .task table .actions *:first-child {
+                    margin-left: 40px;
+                }
+            
+        #tasklist .task table:hover .id {
+            /*color: #666;*/
+        }
+
+        #tasklist .task .button {
+            position: relative;
+            background-color: #f2f2f2;
+            border: 1px solid #d9d9d9;
+            border-radius: 25px;
+            color: #444;
+            height: 24px;
+            padding: 0 15px;
+            cursor: pointer;
+        }
+            #tasklist .task .button:hover {
+                border-color: #c6c6c6;
+                box-shadow: 0px 1px 0px 0px rgba(50, 50, 50, 0.2);
+            }
+            #tasklist .task .button:active {
+                top: 1px;
+                box-shadow: 0px 0px 0px 0px rgba(50, 50, 50, 0.2);
+            }
+        
+        
+        #tasklist .task .red-hover, #tasklist .task .blue-hover, #tasklist .task .green-hover {
+            background-color: #fff;
+            border-color: #fff;
+            /*transition: all .05s ease;*/
+        }
+            #tasklist .task .red-hover:hover {
+                background-color: #e55;
+                border-color: #f99;
+                color: #fff;
+            }
+            #tasklist .task .blue-hover:hover {
+                background-color: #44e;
+                border-color: #99f;
+                color: #fff;
+            }
+            #tasklist .task .green-hover:hover {
+                background-color: #6c6;
+                border-color: #afa;
+                color: #fff;
+            }
+            
+
+/* ----------------------------------------------------------------------------------- */
+
+#footer {
+    position: fixed;
+    text-align: center;
+    bottom:0; width: 100%;
+    
+    background-color: #eee;
+    font-family: Tahoma, Arial, Verdana;
+    font-size: 12px;
+    color: #aaa;
+    
+    padding: 5px 0;
+}
+    #footer a {
+        color: #777;
+        /*font-weight: bold;*/
+        text-decoration: none;
+    }
+        #footer a:hover {
+            text-decoration: underline;
+        }
+    
+    #footer .button {
+        background-color: #bbb;
+        padding: 1px 8px;
+        margin: 0 6px;
+        border-radius: 15px;
+        text-decoration: none;
+    }
+        #footer .button > * {
+            text-decoration: none;
+            color: #fff;
+            text-shadow: 0px 1px 2px rgba(130, 130, 130, 1);
+        }
+
+/* ----------------------------------------------------------------------------------- */
+   
+body.active-tasks #urlbar {
+    width: 100%; height: 150px;
+    
+    position: static;
+    
+    top: auto; left: auto;
+    margin: 0; padding: 20px 0 0 0;
+}
+
+body.active-tasks #tasklist {
+    display: block;
+}
+
+
+@media only screen and (max-width: 479px) {
+    #urlbar div.title {
+        font-size: 2em;
+    }
+    #urlbar {
+        top: 43%;
+    }
+    #urlbar input[type='button'] {
+        margin: 5px 0 0 2px;
+        width: 35%;
+    }
+    
+    #tasklist .task table tr {
+        display: block;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    #tasklist .task table tr td {
+        display: block;
+        width: 98% !important; min-width: 98%; max-width: 98%; 
+        /*border: 1px solid #123;*/
+    }
+    #tasklist .task table .actions *:first-child {
+        margin-left: 0;
+    }
+    
+    #footer {
+        font-size: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
